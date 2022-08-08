@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Bahnschrift, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 600px;
+    background: #06f;
+    overflow: hidden;
+}
+
+.vNav {
+    display: flex;
+    width: 100%;
+    height: 800px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.vNav ul {
+    position: relative;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+.vNav ul li {
+    position: relative;
+    list-style: none;
+}
+
+.vNav ul li i {
+    position: relative;
+    font-size: 64px;
+    text-decoration: none;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+}
+
+.vNav ul li a {
+    position: relative;
+    font-size: 64px;
+    text-decoration: none;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+}
+
+
+.vNav ul li  a::before {
+    content: attr(data-text);
+    position: absolute;
+    color: var(--clr);
+    width: 0;
+    overflow: hidden;
+    transition: 1s;
+    border-right: 6px dashed var(--clr);
+    -webkit-text-stroke: 1px var(--clr);
+}
+
+
+.vNav ul li a:hover::before {
+    width: 100%;
+    filter: drop-shadow(0 0 25px var(--clr));
+
+}
+
+.vNav ul li a:hover i {
+    color: var(--clr);
+    transition-delay: 0.63s;
+    z-index: -1;
+}
+
+.dropdown_menu {
+    display: none;
+    transition: 0s background-color;
+}
+
+.dropdown_menu ul {
+    list-style: none;
+    display: flex;
+    border: 2px solid white;
+    text-align: center;
+}
+
+.dropdown_menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.5s;
+}
+
+.dropdown_menu ul li a:hover {
+    text-shadow: 1px 1px 8px white;
+}
+
+.vNav ul li:hover .dropdown_menu {
+    display: block;
+    position: absolute;
+    left: 35px;
+    top: 100%;
+    background-color: var(--clr);
+}
+
+.dropdown_menu ul {
+    display: block;
+    margin: 10px;
+}
+
+.dropdown_menu ul li {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid white;
+}
